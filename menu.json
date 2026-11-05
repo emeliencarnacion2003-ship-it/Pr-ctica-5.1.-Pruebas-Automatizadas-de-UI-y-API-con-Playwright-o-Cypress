@@ -1,0 +1,56 @@
+{
+  "sitio": "Mesa Lista",
+  "restaurantes": [
+    { "id": "criolla", "nombre": "Sabor Criollo (cocina dominicana)" },
+    { "id": "mar", "nombre": "Brisa Marina (mariscos)" },
+    { "id": "italiana", "nombre": "Nonna Rosa (cocina italiana)" }
+  ],
+  "menu": [
+    {
+      "id": "inicio",
+      "titulo": "Inicio",
+      "tipo": "texto",
+      "contenido": "Bienvenido a Mesa Lista. Reserva tu mesa en los mejores restaurantes en pocos pasos: elige el restaurante, la fecha, la hora y la cantidad de personas."
+    },
+    {
+      "id": "restaurantes",
+      "titulo": "Restaurantes",
+      "submenu": [
+        {
+          "id": "criolla",
+          "titulo": "Sabor Criollo",
+          "tipo": "texto",
+          "contenido": "Cocina dominicana tradicional: sancocho, pollo guisado, moro de habichuelas y chicharrones. Abierto todos los días de 11:00 a.m. a 10:00 p.m."
+        },
+        {
+          "id": "mar",
+          "titulo": "Brisa Marina",
+          "tipo": "texto",
+          "contenido": "Pescados y mariscos frescos del día, con vista al mar. Recomendamos reservar con anticipación los fines de semana."
+        },
+        {
+          "id": "italiana",
+          "titulo": "Nonna Rosa",
+          "tipo": "texto",
+          "contenido": "Pastas caseras, pizzas al horno de leña y postres artesanales en un ambiente familiar."
+        }
+      ]
+    },
+    {
+      "id": "reservar",
+      "titulo": "Reservar mesa",
+      "tipo": "formulario"
+    },
+    {
+      "id": "mis-reservas",
+      "titulo": "Mis reservas",
+      "tipo": "reservas"
+    },
+    {
+      "id": "contacto",
+      "titulo": "Contacto",
+      "tipo": "texto",
+      "contenido": "Escríbenos a reservas@mesalista.do o llámanos al 809-555-0100, de lunes a domingo de 9:00 a.m. a 9:00 p.m."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesa Lista | Reservas de restaurantes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Encabezado: el nombre del sitio y el menú se llenan desde menu.json -->
+  <header class="encabezado">
+    <div class="encabezado-contenido">
+      <h1 class="logo" id="nombre-sitio">Mesa Lista</h1>
+
+      <!-- Botón de hamburguesa (solo se ve en celular) -->
+      <button type="button" class="boton-menu" id="boton-menu"
+              aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+
+      <nav class="menu-principal" id="menu-principal">
+        <!-- Esta lista está vacía a propósito: app.js la construye con los datos del JSON -->
+        <ul id="menu"></ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Aquí app.js muestra el contenido de la opción elegida -->
+  <main class="contenido" id="contenido">
+    <p>Cargando...</p>
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2026 Mesa Lista. Maria Perla</p>
+  </footer>
+
+  <!--
+    Plantilla del formulario. El navegador no la muestra por sí sola:
+    app.js la copia cuando el usuario elige "Reservar mesa".
+  -->
+  <template id="plantilla-formulario">
+    <form id="form-reserva" class="formulario">
+
+      <label for="restaurante">Restaurante</label>
+      <select id="restaurante" name="restaurante" required></select>
+
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" minlength="3" required>
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono"
+             pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+             placeholder="809-555-1234" required>
+
+      <div class="fila">
+        <div>
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" name="fecha" required>
+        </div>
+        <div>
+          <label for="hora">Hora</label>
+          <input type="time" id="hora" name="hora" min="11:00" max="22:00" required>
+        </div>
+      </div>
+
+      <label for="personas">Cantidad de personas</label>
+      <input type="number" id="personas" name="personas" min="1" max="12" value="2" required>
+
+      <button type="submit" class="btn">Confirmar reserva</button>
+      <p id="mensaje" class="aviso" role="status"></p>
+    </form>
+  </template>
+
+  <!-- El JavaScript va al final para que el HTML ya exista cuando se ejecute -->
+  <script src="app.js"></script>
+</body>
+</html>
